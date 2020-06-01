@@ -7,7 +7,8 @@ const loadSnackbar = document.getElementById("load-snack-bar");
 const bottomSnackbar = document.getElementById("bottom-snackbar");
 const pageTitle = document.querySelector(".page-title");
 
-const baseUrl = "https://superheroapi.com/api/3888832094520145/";
+const baseUrl =
+	"https://cors-anywhere.herokuapp.com/https://superheroapi.com/api/3888832094520145/";
 let currID = null;
 
 //Load Cards On Input Change
