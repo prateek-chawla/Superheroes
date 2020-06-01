@@ -1,7 +1,7 @@
 @font-face {
 	/* Import page title font */
 	font-family: "superHero";
-	src: url("assets/fonts/heroNameFont.ttf") format("truetype");
+	src: url("./assets/fonts/heroNameFont.ttf") format("truetype");
 }
 
 html {
