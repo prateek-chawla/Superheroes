@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script src="/scripts/app.js" defer></script>
+    <script src="/scripts/favorites.js" defer></script>
+
+    <link rel="stylesheet" href="/assets/fontawesome/css/all.min.css" />
+    <link rel="stylesheet" href="/style.css" />
+
+    <title>Favorites</title>
+</head>
+
+<body>
+    <!-- Navigation Buttons -->
+    <div class="btn-tray">
+        <a href="/index.html" class="speech-bubble home-btn">
+            <i class="fas fa-home"></i>
+        </a>
+        <a href="/screens/favorites.html" class="speech-bubble fav-btn">
+            <i class="fas fa-heart"></i>
+        </a>
+    </div>
+
+    <main>
+        <!-- Page Title -->
+        <div class="page-title hero-text">
+            Favorites
+        </div>
+
+        <!-- SearchBox -->
+        <div class="search-text">
+            <input type="text" name="search" id="search" placeholder="Search ... " autocomplete="off" spellcheck="false" />
+        </div>
+
+        <!-- Primary Container -->
+        <div class="cards-container"></div>
+    </main>
+
+    <!-- Status SnackBar -->
+    <div class="hero-text" id="bottom-snackbar">
+        SnackBar
+    </div>
+
+    <!-- Loading SnackBar -->
+    <div id="load-snack-bar" class="hero-text">
+        Loading ...
+    </div>
+
+    <!-- Card Template -->
+    <template id="card-template">
+        <div class="card">
+            <div class="hero-text hero-name"></div>
+            <a href="/screens/hero.html"><img class="hero-img" src="" alt="SuperHero Image" /></a>
+            <div class="hero-text hero-fav">
+                <i id="hero-icon" class="fas fa-plus"></i> Favorite
+            </div>
+            <input type="hidden" class="hero-id" />
+        </div>
+    </template>
+</body>
+
+</html>

@@ -1,0 +1,309 @@
+@font-face {
+	/* Import page title font */
+	font-family: "superHero";
+	src: url("assets/fonts/heroNameFont.ttf") format("truetype");
+}
+
+html {
+	background-color: whitesmoke;
+}
+
+body {
+	position: relative;
+	overflow: hidden;
+	width: 100vw;
+	height: 90vh;
+	margin-right: 0;
+}
+
+/* Center Container */
+
+main {
+	font-size: 16px;
+	background-color: cornsilk;
+	border: 2px solid black;
+	position: relative;
+	margin: 0;
+	margin-left: 3rem;
+	margin-top: 0.7rem;
+	width: 88vw;
+	height: 88vh;
+	overflow-x: hidden;
+	overflow-y: auto;
+	position: relative;
+}
+
+/* Skewed ComicBook Text*/
+
+.hero-text {
+	background-color: #fff;
+	font-family: "Comic Sans MS", cursive;
+	border: solid 2px black;
+	color: black;
+}
+
+.page-title {
+	width: 55vw;
+	font-size: 4.5rem;
+	font-family: "superHero", "Comic Sans MS";
+	transform: translateX(-3%) skew(-10deg);
+	padding: 0.7rem 2rem 0.7rem 4rem;
+	border: 3px solid black;
+	border-top: none;
+	overflow: hidden;
+	margin: 0;
+	z-index: 10;
+}
+
+/* Navigation Buttons */
+
+.btn-tray {
+	left: 93%;
+	top: 1rem;
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+/* Navigation Buttons Shape*/
+
+.speech-bubble {
+	background-color: rgb(214, 199, 199);
+	display: inline-block;
+	height: 4rem;
+	width: 4rem;
+	border-radius: 30%;
+	margin: auto;
+	text-align: center;
+	position: relative;
+	margin-bottom: 2rem;
+}
+
+.speech-bubble::after {
+	content: "";
+	width: 0;
+	height: 0;
+	border: 1rem solid rgb(214, 199, 199);
+	position: absolute;
+	top: 75%;
+	left: 0%;
+	border-bottom-color: transparent;
+	border-right-color: transparent;
+}
+
+.speech-bubble i {
+	color: #000;
+	font-size: 2.5rem;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	opacity: 0.7;
+}
+
+.home-btn i {
+	color: royalblue;
+}
+
+/* SearchBox */
+
+#search {
+	outline: none;
+	border: 2px solid black;
+	border-top: none;
+	position: absolute;
+	padding: 1rem 3rem 1rem;
+	right: 0;
+	top: 0;
+	transform: translateX(3%) skewX(-10deg);
+	font-family: "Comic Sans MS", cursive;
+	z-index: 1;
+}
+
+#search::placeholder {
+	opacity: 0.5;
+}
+
+.cards-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	margin-left: 1rem;
+}
+
+/* Hero Card */
+
+.card {
+	width: 15rem;
+	height: 20rem;
+	overflow: hidden;
+	border: 2px solid black;
+	position: relative;
+	box-shadow: 3px 3px 4px -2px black;
+	margin: 2rem 1.5rem;
+}
+
+.card:hover {
+	transform: translate(-1px, -1px);
+	box-shadow: -1px -1px 4px 3px lightgrey, 3px 3px 4px -2px black;
+	cursor: pointer;
+}
+
+.hero-img {
+	width: 100%;
+	height: auto;
+	object-fit: contain;
+}
+
+.hero-name {
+	position: absolute;
+	font-size: 1.2rem;
+	transform: skew(-10deg);
+	padding: 0 1.8rem 0 1.8rem;
+	top: 0;
+	left: -0.8rem;
+	border-top: none;
+}
+
+.hero-fav {
+	position: absolute;
+	transform: skew(-17deg);
+	padding: 0 1.5rem 0 1rem;
+	bottom: 0;
+	right: -0.8rem;
+	font-size: 1rem;
+	border-bottom: none;
+}
+
+.hero-fav i {
+	font-size: 0.6rem;
+	text-align: center;
+	vertical-align: middle;
+	padding-bottom: 2px;
+}
+
+.hero-fav:hover {
+	background-color: whitesmoke;
+	transform: skew(-17deg) translate(-1%, -1%);
+	box-shadow: -1px -1px 4px 2px black;
+	cursor: pointer;
+}
+
+/*Message SnackBar*/
+#bottom-snackbar {
+	width: fit-content;
+	padding: 0 1.5rem;
+	position: absolute;
+	left: 50%;
+	top: 100%;
+	transform: translate(-50%, 250%);
+	height: 2rem;
+	border-radius: 0.5rem;
+	transition: all 0.7s ease;
+}
+
+/*Loading SnackBar*/
+#load-snack-bar {
+	position: absolute;
+	bottom: -5%;
+	right: 5%;
+	padding: 0 1rem;
+	transform: skewX(-10deg);
+	opacity: 0;
+}
+
+/* Hero Page */
+
+.main-hero {
+	overflow: hidden;
+	position: relative;
+	height: calc(80% + 2px);
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+}
+
+.main-hero-img {
+	height: auto;
+	width: 35%;
+	margin: none;
+	transform: skewX(-5deg) translateX(-6%);
+	margin-top: -8px;
+	border-right-width: 3px;
+}
+
+/* Hero info */
+.main-hero-info {
+	display: flex;
+	transform: skewX(-5deg);
+	margin-top: 0.25rem;
+	width: 50%;
+	flex-wrap: wrap;
+	align-content: flex-start;
+}
+
+.info {
+	flex-basis: 10rem;
+	height: 4rem;
+	border: 2px solid black;
+	position: relative;
+	background-image: radial-gradient(circle, cornsilk, wheat);
+	margin: 2px;
+	margin-right: 6px;
+	margin-top: 6px;
+	position: relative;
+	overflow: hidden;
+}
+
+.info-name {
+	background-color: #fff;
+	border: 2px solid black;
+	border-top: none;
+	border-left: none;
+	width: fit-content;
+	padding: 0 1rem;
+	position: absolute;
+	top: 0;
+	left: 0;
+	max-width: 80%;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.info-value {
+	position: absolute;
+	background-color: ivory;
+	border: 2px solid black;
+	border-right: none;
+	border-bottom: none;
+	padding: 0 1rem;
+	bottom: 0;
+	text-align: left;
+	right: 0;
+	max-width: 80%;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+/* ScrollBar */
+
+::-webkit-scrollbar {
+	width: 8px;
+}
+
+::-webkit-scrollbar-track {
+	background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+	background: lightgrey;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: grey;
+}

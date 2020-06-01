@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="/scripts/app.js" defer></script>
+    <script src="/scripts/hero.js" defer></script>
+
+    <link rel="stylesheet" href="/assets/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="/style.css">
+
+    <title>Hero</title>
+</head>
+
+<body>
+
+    <!-- Navigation Buttons -->
+    <div class="btn-tray">
+        <a href="/index.html" class="speech-bubble home-btn">
+            <i class="fas fa-home"></i>
+        </a>
+        <a href="/screens/favorites.html" class="speech-bubble fav-btn">
+            <i class="fas fa-heart"></i>
+        </a>
+    </div>
+
+    <main>
+        <!-- Page Title -->
+        <div class="page-title hero-text">
+        </div>
+
+        <!-- SearchBox -->
+        <div class="search-text">
+            <input type="text" name="search" id="search" placeholder="Search ... " autocomplete="off" spellcheck="false">
+        </div>
+
+        <div class="cards-container">
+        </div>
+
+        <!-- Hero Template -->
+        <template id="mainHeroTemplate">
+            <div class="main-hero">
+                <img src="" alt="Hero Image" class="main-hero-img hero-text">
+                <div class="hero-text hero-fav">
+                    <i id="hero-icon" class="fas fa-plus"></i> Favorite
+                </div>
+
+                <div class="main-hero-info">
+
+                    <!-- Full Name -->
+                    <div style="flex-basis:22rem;" class="info-full-name info">
+                        <div class="hero-text info-name">Full Name</div>
+                        <div class="hero-text info-value">Bruce Wayne</div>
+                    </div>
+
+                    <!-- Intellignce -->
+                    <div style="flex-basis:10rem;" class="info-intelligence info">
+                        <div class="hero-text info-name">Intellignce</div>
+                        <div class="hero-text info-value">86</div>
+                    </div>
+
+                    <!-- Power -->
+                    <div style="height:6rem; flex-basis:8rem;" class="info-power info">
+                        <div class="hero-text info-name">Power</div>
+                        <div class="hero-text info-value">86</div>
+                    </div>
+
+                    <!-- Place Of Birth -->
+                    <div style="height:6rem; flex-basis:24rem;" class="info-pob info">
+                        <div class="hero-text info-name">Place Of Birth</div>
+                        <div class="hero-text info-value">Crest Hill; Bristol Township; Gotham County</div>
+                    </div>
+
+                    <!-- Combat -->
+                    <div style="height:6rem; flex-basis:14rem;" class="info-combat info">
+                        <div class="hero-text info-name">Combat</div>
+                        <div class="hero-text info-value">85</div>
+                    </div>
+
+                    <!-- Publisher -->
+                    <div style="height:6rem; flex-basis:18rem;" class="info-publisher info">
+                        <div class="hero-text info-name">Publisher</div>
+                        <div class="hero-text info-value">86</div>
+                    </div>
+
+                    <!-- First Appearance -->
+                    <div style="height:4.8rem; flex-basis:20rem;" class="info-first-appearance info">
+                        <div class="hero-text info-name">First Appearance</div>
+                        <div class="hero-text info-value">Detective Comics #27</div>
+                    </div>
+
+                    <!-- Durability -->
+                    <div style="height:4.8rem; flex-basis:12rem;" class="info-durability info">
+                        <div class="hero-text info-name">Power</div>
+                        <div class="hero-text info-value">86</div>
+                    </div>
+
+                    <!-- Height -->
+                    <div style="flex-basis:16rem;" class="info-height info">
+                        <div class="hero-text info-name">Height</div>
+                        <div class="hero-text info-value">86</div>
+                    </div>
+
+                    <!-- Weight -->
+                    <div style="flex-basis:16rem;" class="info-weight info">
+                        <div class="hero-text info-name">Weight</div>
+                        <div class="hero-text info-value">86</div>
+                    </div>
+
+                </div>
+            </div>
+        </template>
+
+
+
+    </main>
+
+    <!-- Status SnackBar -->
+    <div class="hero-text" id="bottom-snackbar">
+        SnackBar
+    </div>
+
+    <!-- Loading SnackBar -->
+    <div id="load-snack-bar" class="hero-text">
+        Loading ...
+    </div>
+
+</body>
+
+</html>
