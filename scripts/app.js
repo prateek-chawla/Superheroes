@@ -7,7 +7,7 @@ const loadSnackbar = document.getElementById("load-snack-bar");
 const bottomSnackbar = document.getElementById("bottom-snackbar");
 const pageTitle = document.querySelector(".page-title");
 
-const baseUrl = "https://superheroapi.com/api/3888832094520145/";
+const baseUrl = "https://superheroapi.com/api.php/3888832094520145/";
 let currID = null;
 
 //Load Cards On Input Change
@@ -22,49 +22,37 @@ function getCards() {
 	}
 }
 
-function getResponse(url, favorites = false) {
-	let xhr = new XMLHttpRequest();
+async function getResponse(url, favorites = false) {
+	//Show Loading SnackBar
+	loadSnackbar.style.opacity = "1";
+	let response = await fetch(url).catch(err => {
+		console.log(err);
+		// Remove Loading SnackBar
+		loadSnackbar.style.opacity = "0";
+	});
 
-	xhr.onreadystatechange = function () {
-		//Hide Loading SnackBar
-		if (xhr.readyState === XMLHttpRequest.DONE)
-			loadSnackbar.style.opacity = "0";
+	let responseJSON = await response.json();
 
-		//Show Loading SnackBar
-		if (xhr.readyState === XMLHttpRequest.OPENED)
-			loadSnackbar.style.opacity = "1";
-	};
-
-	xhr.open("GET", url);
-
-	xhr.onerror = function () {
-		console.log("Error");
-	};
-
-	xhr.onload = function () {
-		responseJSON = JSON.parse(xhr.response);
-		if (responseJSON.response === "success") {
-			if (!favorites) {
-				// Load Search Result Cards by Name
-				while (cards.hasChildNodes()) cards.removeChild(cards.lastChild);
-				results = responseJSON.results;
-			} else {
-				//Load Favorite Hero Card By ID
-				results = [responseJSON];
-			}
-			// Load Cards
-			for (result of results) {
-				loadCard(result, favorites);
-			}
-			//Make Cards Navigate to Hero Page
-			for (let card of cards.children) {
-				card.addEventListener("click", viewHero);
-			}
-		} else if (responseJSON.response === "error")
-			console.log(responseJSON.error);
-	};
-
-	xhr.send();
+	if (responseJSON.response === "success") {
+		if (!favorites) {
+			// Load Search Result Cards by Name
+			while (cards.hasChildNodes()) cards.removeChild(cards.lastChild);
+			results = responseJSON.results;
+		} else {
+			//Load Favorite Hero Card By ID
+			results = [responseJSON];
+		}
+		// Load Cards
+		for (result of results) {
+			loadCard(result, favorites);
+		}
+		// Remove Loading SnackBar
+		loadSnackbar.style.opacity = "0";
+		//Make Cards Navigate to Hero Page
+		for (let card of cards.children) {
+			card.addEventListener("click", viewHero);
+		}
+	} else if (responseJSON.response === "error") console.log(responseJSON.error);
 }
 
 // Create Card From Template
